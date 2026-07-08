@@ -1,5 +1,5 @@
 # simple-cli-autocomplete-lib
-A simple command line interface autocomplete library. Made for creating custom cli's with autocomplete. Current build version: 1.0
+A simple command line interface autocomplete library. Made for creating custom cli's with autocomplete. Current build version: 1.1
 
 ## Function List
 | Command                                  | Description                                                                                                                                                                                                                                                  |
@@ -13,6 +13,7 @@ A simple command line interface autocomplete library. Made for creating custom c
 | `change_file_name(name)`                 | Assigns a new file name for `COMMAND_FILE` (also changes `COMMAND_FILE_NAME`). Intakes a string(just input the name, don't add .txt to the end). NOTE: Does not change file name in system if the command file already exists                                |
 | `complete_command(command)`              | Feature incomplete. Please implement your own complete command system due to the unknown of how a custom cli takes input. Overriding keyboard is an option. Please see [keyboard override implementation](#keyboard-override-implementation) in this README  |
 | `set_file_location(location)`            | Changes the path of `COMMAND_FILE`. Intakes a path or a txt file. NOTE: Does not move the command file, instead it selects a new "command file" with either the new txt file name or `COMMAND_FILE_NAME`                                                     |
+| `toggle_debugger`                        | Toggles if debugger is eneabled. When enabled actions and errors are printed                                                                                                                                                                                 |
 |                                          |                                                                                                                                                                                                                                                              |
 | MISC                                     | Description                                                                                                                                                                                                                                                  |
 | `COMMAND_FILE`                           | A path to the command file that stores your commands                                                                                                                                                                                                         |
@@ -34,8 +35,8 @@ A simple command line interface autocomplete library. Made for creating custom c
 
 ## Update plans
 * Add "smart" command matching (command order)
-* Add fuzzy command matching
-* Reworking to use JSON files
+* Add fuzzy command matching with scores
+* Optimization (load commands once when library initializes instead of always accessing through disc)
 
 ## Contact
 Contact me at soleitenb@gmail.com for any questions
